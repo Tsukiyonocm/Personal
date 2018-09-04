@@ -1,0 +1,56 @@
+/** Variables
+ ---------------------------------------------------------*/
+ $primary-color: #fff;
+ $primary-text: #000;
+
+/** Reset
+ ---------------------------------------------------------*/
+ * {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+.clearfix {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+body {
+    font-weight: 400;
+    background-color: $primary-color;
+    color: $primary-text;
+    line-height: 1.5;
+    font-size: 2rem;
+}
+
+/** Re-use
+ ---------------------------------------------------------*/
+.wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+/** Side-Nav
+ ---------------------------------------------------------*/
+
+.side-nav {
+    width: 25%;
+    height: 100vh;
+}
+
+.content {
+    width: 100%;
+    background-color: blue;
+}
