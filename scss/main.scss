@@ -1,11 +1,8 @@
-/** Variables
- ---------------------------------------------------------*/
- $primary-color: #fff;
- $primary-text: #000;
+@import "config";
 
 /** Reset
  ---------------------------------------------------------*/
- * {
+* {
     margin: 0;
     padding: 0;
 }
@@ -39,18 +36,153 @@ body {
  ---------------------------------------------------------*/
 .wrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
-/** Side-Nav
+/** Navigation
  ---------------------------------------------------------*/
 
-.side-nav {
-    width: 25%;
-    height: 100vh;
+.side_nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    @include easeOut;
+
+    &.show {
+        visibility: visible;
+        opacity: 0.9;
+    }
+
+    .navigation {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        background-color: darken($dark-grey, 5);
+        float: left;
+        overflow: hidden;
+        list-style: none;
+        transform: translate3d(0, -100%, 0);
+        @include easeOut;
+
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+
+        &.show {
+            transform: translate3d(0, 0, 0);
+        }
+
+        &_item {
+            color: $primary-color;
+            transition: opacity 0.8s;
+            opacity: 0;
+            // @include easeOut;
+
+            &.show {
+                opacity: 1;
+                // @include easeOut;
+            }
+
+            &-link {
+               display: inline-block;
+               position: relative;
+               font-size: 3rem;
+               color: $primary-color;
+               text-transform: uppercase;
+               padding: 1.5rem 0;
+               font-weight: 300;
+               text-decoration: none;
+               @include easeOut; 
+            }
+
+            &-link:hover {
+                color: $current-color;
+            }
+
+            &-link:before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: $primary-color;
+                visibility: hidden;
+                transform: scaleX(0);
+                transition: all 0.3s ease-in-out 0s;
+            }
+
+            &-link:hover:before {
+                visibility: visible;
+                transform: scaleX(1);
+            }
+
+            &.current > a {
+                color: $current-color;
+            }
+        }
+    }
+}
+
+// Delay Each Nav-Item opacity by 0.1s
+@for $x from 1 through 4{
+    .navigation_item:nth-child(#{$x}){
+        transition-delay: $x * 0.1s;
+    }
+}
+
+.main_nav-bar {
+    background-color: $dark-grey;
+    height: 10rem;
+    max-width: 100%;
+    box-shadow: 0px 2px 10px $dark-grey;
+}
+
+.menu-btn {
+    position: absolute;
+
+    z-index: 3;
+    right: 3.5rem;
+    top: 3.5rem;
+    cursor: pointer;
+    @include easeOut;
+
+    .btn-line {
+        width: 2.8rem;
+        height: 0.3rem;
+        margin: 0 0 0.5rem 0;
+        background-color: $primary-color;
+        @include easeOut;
+    }
+
+    // Rotate Into X with Menu Lines
+    &.close {
+        transform: rotate(180deg);
+
+        .btn-line {
+            // Line 1 - Rotate
+            &:nth-child(1) {
+                transform: rotate(45deg) translate(0.5rem, 0.5rem);
+            }
+
+            // Line 2 - Hide
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            // Line 3 - Rotate
+            &:nth-child(3) {
+                transform: rotate(-45deg) translate(0.7rem, -0.6rem);
+            }
+        }
+    }
 }
 
 .content {
-    width: 100%;
-    background-color: blue;
+    width: 100vw;
+    height: 100vh;
 }
