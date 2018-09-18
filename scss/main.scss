@@ -30,6 +30,12 @@ body {
     color: $primary-text;
     line-height: 1.5;
     font-size: 2rem;
+
+    // Background Image
+    background-image: url(../img/assets/sebastian-unrau-41675-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /** Re-use
@@ -42,7 +48,57 @@ body {
 /** Navigation
  ---------------------------------------------------------*/
 
-.side_nav {
+// Navigation Bar
+ .main_nav-bar {
+    background-color: $dark-grey;
+    height: 10rem;
+    max-width: 100%;
+    box-shadow: 0px 2px 10px $dark-grey;
+    opacity: .9;
+}
+
+.menu-btn {
+    position: absolute;
+
+    z-index: 3;
+    right: 3.5rem;
+    top: 3.5rem;
+    cursor: pointer;
+    @include easeOut;
+
+    .btn-line {
+        width: 2.8rem;
+        height: 0.3rem;
+        margin: 0 0 0.5rem 0;
+        background-color: $primary-color;
+        @include easeOut;
+    }
+
+    // Rotate Into X with Menu Lines
+    &.close {
+        transform: rotate(180deg);
+
+        .btn-line {
+            // Line 1 - Rotate
+            &:nth-child(1) {
+                transform: rotate(45deg) translate(0.5rem, 0.5rem);
+            }
+
+            // Line 2 - Hide
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            // Line 3 - Rotate
+            &:nth-child(3) {
+                transform: rotate(-45deg) translate(0.7rem, -0.6rem);
+            }
+        }
+    }
+}
+
+// Nav-Overlay
+ .side_nav {
     position: fixed;
     top: 0;
     width: 100%;
@@ -80,11 +136,9 @@ body {
             color: $primary-color;
             transition: opacity 0.8s;
             opacity: 0;
-            // @include easeOut;
 
             &.show {
                 opacity: 1;
-                // @include easeOut;
             }
 
             &-link {
@@ -133,56 +187,4 @@ body {
     .navigation_item:nth-child(#{$x}){
         transition-delay: $x * 0.1s;
     }
-}
-
-.main_nav-bar {
-    background-color: $dark-grey;
-    height: 10rem;
-    max-width: 100%;
-    box-shadow: 0px 2px 10px $dark-grey;
-}
-
-.menu-btn {
-    position: absolute;
-
-    z-index: 3;
-    right: 3.5rem;
-    top: 3.5rem;
-    cursor: pointer;
-    @include easeOut;
-
-    .btn-line {
-        width: 2.8rem;
-        height: 0.3rem;
-        margin: 0 0 0.5rem 0;
-        background-color: $primary-color;
-        @include easeOut;
-    }
-
-    // Rotate Into X with Menu Lines
-    &.close {
-        transform: rotate(180deg);
-
-        .btn-line {
-            // Line 1 - Rotate
-            &:nth-child(1) {
-                transform: rotate(45deg) translate(0.5rem, 0.5rem);
-            }
-
-            // Line 2 - Hide
-            &:nth-child(2) {
-                opacity: 0;
-            }
-
-            // Line 3 - Rotate
-            &:nth-child(3) {
-                transform: rotate(-45deg) translate(0.7rem, -0.6rem);
-            }
-        }
-    }
-}
-
-.content {
-    width: 100vw;
-    height: 100vh;
 }
