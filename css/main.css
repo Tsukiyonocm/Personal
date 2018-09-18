@@ -1,5 +1,7 @@
 /** Variables
  ---------------------------------------------------------*/
+/** Mixin
+ ---------------------------------------------------------*/
 /** Reset
  ---------------------------------------------------------*/
 * {
@@ -31,14 +33,37 @@ body {
  ---------------------------------------------------------*/
 .wrapper {
   display: flex;
-  flex-direction: row; }
+  flex-direction: column; }
 
-/** Side-Nav
+/** Navigation
  ---------------------------------------------------------*/
-.side-nav {
-  width: 25%;
-  height: 100vh; }
+.main_nav-bar {
+  background-color: #525252;
+  height: 10rem;
+  max-width: 100%; }
+
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 3.5rem;
+  top: 3.5rem;
+  cursor: pointer;
+  transition: all 0.5s ease-out; }
+  .menu-btn .btn-line {
+    width: 2.8rem;
+    height: 0.3rem;
+    margin: 0 0 0.5rem 0;
+    background-color: #fff;
+    transition: all 0.5s ease-out; }
+  .menu-btn.close {
+    transform: rotate(180deg); }
+    .menu-btn.close .btn-line:nth-child(1) {
+      transform: rotate(45deg) translate(0.5rem, 0.5rem); }
+    .menu-btn.close .btn-line:nth-child(2) {
+      opacity: 0; }
+    .menu-btn.close .btn-line:nth-child(3) {
+      transform: rotate(-45deg) translate(0.7rem, -0.6rem); }
 
 .content {
-  width: 100%;
-  background-color: blue; }
+  width: 100vw;
+  height: 100vh; }

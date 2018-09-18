@@ -1,11 +1,8 @@
-/** Variables
- ---------------------------------------------------------*/
- $primary-color: #fff;
- $primary-text: #000;
+@import "config";
 
 /** Reset
  ---------------------------------------------------------*/
- * {
+* {
     margin: 0;
     padding: 0;
 }
@@ -39,18 +36,86 @@ body {
  ---------------------------------------------------------*/
 .wrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
-/** Side-Nav
+/** Navigation
  ---------------------------------------------------------*/
 
-.side-nav {
-    width: 25%;
-    height: 100vh;
+// .side-nav {
+//     position: fixed;
+//     top: 0;
+//     width: 100%;
+//     opacity: .9;
+//     visibility: hidden;
+
+//     &.show {
+//         visibility: visible;
+//     }
+
+//     .navigation {
+//         width: 100%;
+//         height: 100vh;
+//         margin: 0;
+//         padding: 0;
+//         background-color: darken($dark-grey, 5);
+//         float: left;
+//         overflow: hidden;
+//         list-style: none;
+
+//         display: flex;
+//         flex-flow: column wrap;
+//         align-items: center;
+//         justify-content: center;
+//     }
+// }
+.main_nav-bar {
+    background-color: $dark-grey;
+    height: 10rem;
+    max-width: 100%;
+}
+
+.menu-btn {
+    position: absolute;
+
+    z-index: 3;
+    right: 3.5rem;
+    top: 3.5rem;
+    cursor: pointer;
+    @include easeOut;
+
+    .btn-line {
+        width: 2.8rem;
+        height: 0.3rem;
+        margin: 0 0 0.5rem 0;
+        background-color: $primary-color;
+        @include easeOut;
+    }
+
+    // Rotate Into X with Menu Lines
+    &.close {
+        transform: rotate(180deg);
+
+        .btn-line {
+            // Line 1 - Rotate
+            &:nth-child(1) {
+                transform: rotate(45deg) translate(0.5rem, 0.5rem);
+            }
+
+            // Line 2 - Hide
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            // Line 3 - Rotate
+            &:nth-child(3) {
+                transform: rotate(-45deg) translate(0.7rem, -0.6rem);
+            }
+        }
+    }
 }
 
 .content {
-    width: 100%;
-    background-color: blue;
+    width: 100vw;
+    height: 100vh;
 }
