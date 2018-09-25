@@ -190,27 +190,44 @@ body {
 }
 
 @media only screen and (min-width: 700px) {
+    
+    .main_nav-bar {
+        background-color: $dark-grey;
+        height: 8rem;
+        box-shadow: none;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
     .menu-btn {
         display: none;
     }
 
     .side_nav {
+        max-width: 120rem;
         opacity: 1;
         visibility: visible;
-        // background-color: transparent;
+        background-color: transparent;
 
         .navigation {
-            height: 10rem;
             transform: translate3d(0,0,0);
-            flex-direction: row;
+            display: flex;
             justify-content: flex-end;
-            align-items: center;
-            // background-color: transparent;
+            align-items: flex-start;
+            flex-direction: row;
+            background-color: transparent;
             
 
             &_item {
                 opacity: 1;
-                padding: 0 1rem;
+                padding: 0 2rem;
+
+                &-link {
+                    font-size: 2rem;
+                    padding: 2.2rem 0 0 0;
+                }
             }
         }
     }
