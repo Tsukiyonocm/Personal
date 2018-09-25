@@ -45,7 +45,7 @@ body {
   background-color: #525252;
   height: 10rem;
   max-width: 100%;
-  box-shadow: 0px 2px 10px #525252;
+  box-shadow: 0px 3px 10px #4a4a4a;
   opacity: .9; }
 
 .menu-btn {
@@ -143,3 +143,19 @@ body {
 
 .navigation_item:nth-child(4) {
   transition-delay: 0.4s; }
+
+@media only screen and (min-width: 700px) {
+  .menu-btn {
+    display: none; }
+  .side_nav {
+    opacity: 1;
+    visibility: visible; }
+    .side_nav .navigation {
+      height: 10rem;
+      transform: translate3d(0, 0, 0);
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center; }
+      .side_nav .navigation_item {
+        opacity: 1;
+        padding: 0 1rem; } }

@@ -53,7 +53,7 @@ body {
     background-color: $dark-grey;
     height: 10rem;
     max-width: 100%;
-    box-shadow: 0px 2px 10px $dark-grey;
+    box-shadow: 0px 3px 10px darken($dark-grey, 3);
     opacity: .9;
 }
 
@@ -186,5 +186,32 @@ body {
 @for $x from 1 through 4{
     .navigation_item:nth-child(#{$x}){
         transition-delay: $x * 0.1s;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .menu-btn {
+        display: none;
+    }
+
+    .side_nav {
+        opacity: 1;
+        visibility: visible;
+        // background-color: transparent;
+
+        .navigation {
+            height: 10rem;
+            transform: translate3d(0,0,0);
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            // background-color: transparent;
+            
+
+            &_item {
+                opacity: 1;
+                padding: 0 1rem;
+            }
+        }
     }
 }
