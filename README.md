@@ -9,7 +9,7 @@ https://www.youtube.com/watch?v=lsLjxSkGSDE
 https://help.github.com/articles/merging-a-pull-request/
 <!-- Helped with Merge and Pull request on github -->
 
-https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches
 
+https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches
 <!-- More on git and branches management -->
 
