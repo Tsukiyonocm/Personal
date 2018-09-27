@@ -6,4 +6,8 @@ https://www.youtube.com/watch?v=lsLjxSkGSDE
 <!-- This helped me with merging my branches via git. Though I did after have to go delete my branch via github seperately. Im guessing there is multiple ways to merge branches and this particular resource only utilizes the terminal. -->
 
 https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches
+<<<<<<< HEAD
 <!-- More on git and branches management -->
+=======
+<-- More on git and branches management -->
+>>>>>>> 31409ddecf0bee9384c85b95e335f3b129a31548
