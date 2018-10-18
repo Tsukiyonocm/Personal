@@ -28,7 +28,7 @@ body {
   color: #000;
   line-height: 1.5;
   font-size: 2rem;
-  background-image: url(../img/assets/sebastian-unrau-41675-unsplash.jpg);
+  background-image: url(../img/original/benjamin-voros-575800-unsplash.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat; }
@@ -36,6 +36,7 @@ body {
 /** Re-use
  ---------------------------------------------------------*/
 .wrapper {
+  min-height: 100vh;
   display: flex;
   flex-direction: column; }
 
@@ -43,7 +44,7 @@ body {
  ---------------------------------------------------------*/
 .main_nav-bar {
   background-color: #525252;
-  height: 10rem;
+  height: 6rem;
   max-width: 100%;
   box-shadow: 0px 3px 10px #4a4a4a;
   opacity: .9; }
@@ -52,7 +53,7 @@ body {
   position: absolute;
   z-index: 3;
   right: 3.5rem;
-  top: 3.5rem;
+  top: 2.1rem;
   cursor: pointer;
   transition: all 0.5s ease-out; }
   .menu-btn .btn-line {
@@ -144,10 +145,27 @@ body {
 .navigation_item:nth-child(4) {
   transition-delay: 0.4s; }
 
+/** Content
+ ---------------------------------------------------------*/
+.content {
+  flex: 1; }
+
+/** Footer
+ ---------------------------------------------------------*/
+.footer {
+  background-color: #525252;
+  height: 6rem;
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
 @media only screen and (min-width: 700px) {
   .main_nav-bar {
     background-color: #525252;
-    height: 8rem;
+    height: 6rem;
     box-shadow: none;
     display: flex;
     justify-content: center;
@@ -171,4 +189,4 @@ body {
         padding: 0 2rem; }
         .side_nav .navigation_item-link {
           font-size: 2rem;
-          padding: 2.2rem 0 0 0; } }
+          padding: 1.5rem 0 0 0; } }
